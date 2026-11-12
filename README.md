@@ -10,7 +10,6 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Noufalthecoder&label=Profile%20Views&color=9b5de5&style=for-the-badge" alt="profile views" />
   <a href="https://github.com/Noufalthecoder?tab=followers"><img src="https://img.shields.io/github/followers/Noufalthecoder?label=Followers&style=for-the-badge&color=f15bb5&labelColor=1a0638&logo=github" alt="followers" /></a>
   <a href="https://github.com/Noufalthecoder?tab=repositories"><img src="https://img.shields.io/github/stars/Noufalthecoder?label=Stars&style=for-the-badge&color=00f5d4&labelColor=1a0638&logo=starship" alt="stars" /></a>
 </p>
