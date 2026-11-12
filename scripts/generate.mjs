@@ -185,9 +185,7 @@ function statsCard(s) {
   <g font-family="${MONO}" font-size="14" letter-spacing="3">
     <circle cx="40" cy="38" r="5" fill="${P.cyan}"><animate attributeName="opacity" values="1;.2;1" dur="1.2s" repeatCount="indefinite"/></circle>
     <text x="54" y="43" fill="${P.text}">${esc(USER.toUpperCase())} <tspan fill="${P.dim}">// CONTRIBUTION REACTOR</tspan></text>
-    <text x="1160" y="43" text-anchor="end" fill="${P.dim}">
-      <tspan fill="${P.yellow}">★</tspan> ${s.stars}  <tspan fill="${P.cyan}">◆</tspan> ${s.repos} REPOS  <tspan fill="${P.pink}">♥</tspan> ${s.followers} FOLLOWERS
-    </text>
+    <text x="1160" y="43" text-anchor="end" fill="${P.dim}">STATUS <tspan fill="${P.cyan}">● ONLINE<animate attributeName="opacity" values="1;.35;1" dur="1.6s" repeatCount="indefinite"/></tspan>  ·  ALWAYS SHIPPING <tspan fill="${P.yellow}">⚡</tspan></text>
   </g>`;
 
   panels.forEach((p, i) => {
