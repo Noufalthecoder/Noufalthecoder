@@ -66,40 +66,41 @@ const noufal = {
 
 <img src="./assets/divider.svg" width="100%" />
 
-<!-- ================= STATS ================= -->
-## 📊 GitHub Galaxy
+<!-- ================= STATS (custom-built, live data) ================= -->
+## ⚛️ Contribution Reactor
 
 <p align="center">
-  <img height="180" src="https://github-readme-stats.vercel.app/api?username=Noufalthecoder&show_icons=true&theme=radical&hide_border=true&bg_color=0d0221&title_color=00f5d4&icon_color=f15bb5&text_color=e0d7ff&include_all_commits=true&count_private=true&rank_icon=github" />
-  <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Noufalthecoder&layout=compact&theme=radical&hide_border=true&bg_color=0d0221&title_color=00f5d4&text_color=e0d7ff&langs_count=8" />
+  <img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/stats.svg" width="100%" alt="contribution stats" />
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=Noufalthecoder&theme=radical&hide_border=true&background=0D0221&ring=F15BB5&fire=FEE440&currStreakNum=00F5D4&sideNums=E0D7FF&currStreakLabel=00F5D4&sideLabels=9B5DE5&dates=E0D7FF" width="80%" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Noufalthecoder&bg_color=0d0221&color=e0d7ff&line=f15bb5&point=00f5d4&area=true&area_color=9b5de5&hide_border=true&radius=10" width="100%" />
-</p>
-
-<!-- ================= TROPHIES ================= -->
-## 🏆 Trophy Cabinet
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Noufalthecoder&theme=radical&no-frame=true&no-bg=true&margin-w=6&row=1&column=7" width="100%" />
+  <img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/languages.svg" width="100%" alt="languages" />
 </p>
 
 <img src="./assets/divider.svg" width="100%" />
 
-<!-- ================= SNAKE ================= -->
-## 🐍 Watch My Contributions Get Eaten
+<!-- ================= 3D CITY ================= -->
+## 🌃 My Code City
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution city" />
+</p>
+
+<img src="./assets/divider.svg" width="100%" />
+
+<!-- ================= SNAKES ================= -->
+## 🐍 Snake Arena: Every Green Square Gets Eaten
 
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/github-snake-neon.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/github-snake.svg" />
-    <img alt="snake eating contributions" src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/github-snake-dark.svg" width="100%" />
+    <img alt="neon snake eating contributions" src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/github-snake-dark.svg" width="100%" />
   </picture>
+</p>
+
+<p align="center">
+  <img alt="fire snake eating contributions" src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/github-snake-fire.svg" width="100%" />
 </p>
 
 <!-- ================= FOOTER ================= -->
