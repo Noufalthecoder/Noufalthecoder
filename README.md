@@ -10,11 +10,6 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Noufalthecoder?tab=followers"><img src="https://img.shields.io/github/followers/Noufalthecoder?label=Followers&style=for-the-badge&color=f15bb5&labelColor=1a0638&logo=github" alt="followers" /></a>
-  <a href="https://github.com/Noufalthecoder?tab=repositories"><img src="https://img.shields.io/github/stars/Noufalthecoder?label=Stars&style=for-the-badge&color=00f5d4&labelColor=1a0638&logo=starship" alt="stars" /></a>
-</p>
-
-<p align="center">
   <a href="https://linkedin.com/in/YOUR_LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
   <a href="https://twitter.com/YOUR_TWITTER"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" /></a>
   <a href="https://instagram.com/YOUR_INSTAGRAM"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
