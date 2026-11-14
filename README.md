@@ -13,7 +13,8 @@
   <a href="https://linkedin.com/in/YOUR_LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
   <a href="https://twitter.com/YOUR_TWITTER"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" /></a>
   <a href="https://instagram.com/YOUR_INSTAGRAM"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
-  <a href="https://YOUR_PORTFOLIO"><img src="https://img.shields.io/badge/Portfolio-9b5de5?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
+  <a href="https://noufalthedev.me"><img src="https://img.shields.io/badge/Portfolio-9b5de5?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
+  <a href="https://github.com/Noufalthecoder"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
 </p>
 
 <img src="./assets/divider.svg" width="100%" />
