@@ -1,103 +1,39 @@
-<!-- ================= HEADER ================= -->
-<p align="center">
-  <img src="./assets/header.svg" width="100%" alt="Mohammed Noufal" />
-</p>
+<a href="https://noufalthedev.me"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/hero.svg" width="100%" alt="Mohammed Noufal. AI engineer and full-stack developer. I build AI agents and full-stack products, and ship them fast enough to win hackathons." /></a>
 
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2800&pause=800&color=00F5D4&center=true&vCenter=true&multiline=false&repeat=true&width=720&height=60&lines=Hey+there!+I'm+Mohammed+Noufal+%F0%9F%91%8B;Full-Stack+Developer+%E2%9A%A1;I+turn+%E2%98%95+into+clean+code;Building+products+people+love+%F0%9F%9A%80;Always+learning.+Always+shipping." alt="Typing SVG" />
-  </a>
+  <a href="https://www.linkedin.com/in/mohammed-noufal-v-972353329/"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/btn-linkedin.svg" height="44" alt="LinkedIn" /></a>
+  &nbsp;
+  <a href="https://noufalthedev.me"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/btn-portfolio.svg" height="44" alt="Portfolio" /></a>
 </p>
+
+<br />
+
+<img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/h-work.svg" width="100%" alt="Selected work: things I've shipped" />
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/mohammed-noufal-v-972353329/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="https://noufalthedev.me"><img src="https://img.shields.io/badge/Portfolio-9b5de5?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
+  <a href="https://github.com/Noufalthecoder/RulyOs"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/work-rulyos.svg" width="49.2%" alt="RulyOS. A financial control plane for autonomous AI agents." /></a>
+  <a href="https://github.com/Noufalthecoder/vanakkam"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/work-vanakkam.svg" width="49.2%" alt="Vanakkam. An AI beauty studio that matches looks to real product shades." /></a>
 </p>
-
-<img src="./assets/divider.svg" width="100%" />
-
-<!-- ================= ABOUT ================= -->
-## <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="32" /> About Me
-
-<table>
-<tr>
-<td width="55%">
-
-```ts
-const noufal = {
-  role:        "Full-Stack Developer",
-  location:    "India 🇮🇳",
-  building:    ["Swiggy-style food delivery app 🍔", "cool side projects"],
-  learning:    ["System Design", "Cloud & DevOps", "AI/ML"],
-  stack:       { frontend: ["React", "Next.js", "Tailwind"],
-                 backend:  ["Node.js", "Express", "MongoDB"] },
-  funFact:     "I debug faster after biryani 🍛",
-  openTo:      "collabs, freelance & cool ideas ✨",
-};
-```
-
-</td>
-<td width="45%" align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="coding" />
-</td>
-</tr>
-</table>
-
-<img src="./assets/divider.svg" width="100%" />
-
-<!-- ================= TECH STACK ================= -->
-## ⚡ Tech Arsenal
-
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind,redux,sass&perline=9&theme=dark" />
-  <br/><br/>
-  <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,postgres,mysql,redis,firebase,graphql,prisma&perline=9&theme=dark" />
-  <br/><br/>
-  <img src="https://skillicons.dev/icons?i=git,github,docker,aws,vercel,linux,vscode,figma,postman&perline=9&theme=dark" />
+  <a href="https://github.com/Noufalthecoder/recongraph"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/work-recongraph.svg" width="49.2%" alt="ReconGraph. Financial reconciliation intelligence." /></a>
+  <a href="https://github.com/Noufalthecoder/NaviCargo-AI"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/work-navicargo.svg" width="49.2%" alt="NaviCargo AI. Predicts missed vessel connections for exporters." /></a>
 </p>
-
-<img src="./assets/divider.svg" width="100%" />
-
-<!-- ================= STATS (custom-built, live data) ================= -->
-## ⚛️ Contribution Reactor
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/stats.svg" width="100%" alt="contribution stats" />
+  <a href="https://github.com/Noufalthecoder/catalyst"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/work-catalyst.svg" width="49.2%" alt="Catalyst. Turns messy industrial catalog data into validated product information." /></a>
+  <a href="https://github.com/Noufalthecoder/DaNA"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/work-dana.svg" width="49.2%" alt="DaNA. Premarital genetic screening explained simply." /></a>
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/languages.svg" width="100%" alt="languages" />
-</p>
+<br />
 
-<img src="./assets/divider.svg" width="100%" />
+<img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/h-record.svg" width="100%" alt="Track record: tested under a deadline" />
 
-<!-- ================= 3D CITY ================= -->
-## 🌃 My Code City
+<p><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/record.svg" width="100%" alt="Hackathon record: winner of the Agent.AI Challenge (HackerEarth) and OpsFusion (IFMR Krea University), runner-up at Synapse Sentinel Hackathon (CIT), national finalist at World Computer Hacker League, national semi-finalist at ET AI Hackathon 2026. 600+ LeetCode, 300+ CodeChef and 150+ SkillRack problems solved." /></p>
+<p><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/about.svg" width="100%" alt="Experience: Backend AI Engineer Intern at Flyrank.ai (2025), SDE Intern at L2M Labs (2024), Machine Learning Intern at Alfido Tech (2024), Web Developer Intern at Elevate Labs (2024). Toolbox: Python, TypeScript, JavaScript, Java, SQL, LLM agents, RAG, TensorFlow, scikit-learn, OpenCV, React, Next.js, Node.js, FastAPI, GraphQL, AWS, Google Cloud, Firebase, PostgreSQL, Docker." /></p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution city" />
-</p>
+<br />
 
-<img src="./assets/divider.svg" width="100%" />
+<img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/h-activity.svg" width="100%" alt="Activity: still shipping" />
 
-<!-- ================= SNAKES ================= -->
-## 🐍 Snake Arena: Every Green Square Gets Eaten
+<p><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/activity.svg" width="100%" alt="Live GitHub activity: contributions over the last 12 months, streaks and top languages." /></p>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/github-snake-neon.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/github-snake.svg" />
-    <img alt="neon snake eating contributions" src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/github-snake-dark.svg" width="100%" />
-  </picture>
-</p>
-
-<p align="center">
-  <img alt="fire snake eating contributions" src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/github-snake-fire.svg" width="100%" />
-</p>
-
-<!-- ================= FOOTER ================= -->
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3000&pause=1000&color=F15BB5&center=true&vCenter=true&width=600&lines=%E2%AD%90+Thanks+for+visiting!+Drop+a+star+if+you+vibe+%E2%AD%90;Let's+build+something+legendary+together+%F0%9F%9A%80" />
-</p>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:9b5de5,50:f15bb5,100:00f5d4&height=140&section=footer&animation=twinkling" width="100%" />
+<a href="https://www.linkedin.com/in/mohammed-noufal-v-972353329/"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/closing.svg" width="100%" alt="Building something with AI? Let's talk. Message me on LinkedIn." /></a>
