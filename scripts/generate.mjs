@@ -142,7 +142,7 @@ async function fetchData() {
       totalCount
       nodes{ languages(first:10, orderBy:{field:SIZE, direction:DESC}){ edges{ size node{ name } } } }
     }
-    contributionsCollection{ contributionCalendar{ totalContributions weeks{ contributionDays{ date contributionCount } } } }
+    contributionsCollection{ contributionYears contributionCalendar{ totalContributions weeks{ contributionDays{ date contributionCount } } } }
   }}`;
   const res = await fetch('https://api.github.com/graphql', {
     method: 'POST',
@@ -151,7 +151,24 @@ async function fetchData() {
   });
   const json = await res.json();
   if (json.errors || !json.data?.user) throw new Error(JSON.stringify(json.errors || json));
-  return json.data.user;
+  const user = json.data.user;
+
+  // all-time total: one calendar per year the account has been active
+  const years = user.contributionsCollection.contributionYears || [];
+  if (years.length) {
+    const parts = years.map((y) => `y${y}: contributionsCollection(from:"${y}-01-01T00:00:00Z", to:"${y}-12-31T23:59:59Z"){ contributionCalendar{ totalContributions } }`).join(' ');
+    const res2 = await fetch('https://api.github.com/graphql', {
+      method: 'POST',
+      headers: { Authorization: `bearer ${TOKEN}`, 'Content-Type': 'application/json', 'User-Agent': 'profile-generator' },
+      body: JSON.stringify({ query: `query($login:String!){ user(login:$login){ ${parts} } }`, variables: { login: USER } }),
+    });
+    const all = (await res2.json()).data?.user;
+    if (all) {
+      user.allTime = Object.values(all).reduce((sum, y) => sum + y.contributionCalendar.totalContributions, 0);
+      user.since = Math.min(...years);
+    }
+  }
+  return user;
 }
 
 function computeStats(user) {
@@ -176,7 +193,8 @@ function computeStats(user) {
   const rest = ranked.slice(4).reduce((s, l) => s + l.pct, 0);
   if (rest > 0.05) langs.push({ name: 'Other', pct: rest });
 
-  return { weeks, days, total, longest, current, best, active, langs, repos: user.repositories.totalCount };
+  const allTime = Math.max(user.allTime || 0, total);
+  return { weeks, days, total, allTime, since: user.since, longest, current, best, active, langs, repos: user.repositories.totalCount };
 }
 
 // ------------------------------------------------------------------ hero
@@ -342,13 +360,16 @@ function activity(s) {
     return `<g class="fade" style="animation-duration:.5s;animation-delay:${n(0.3 + w * 0.022)}s">${cells}</g>`;
   }).join('');
 
-  const totalW = measure(s.total, 'display', 104);
+  const totalW = measure(s.allTime, 'display', 104);
+  const line1 = s.since ? `contributions since ${s.since}` : 'contributions';
+  const sideX = Math.max(PAD + 430, PAD + totalW + 12 + measure(line1, 'text', 17) + 34);
+  const sideGap = Math.min(160, (W - PAD - sideX - 110) / 2);
   const side = [
     { v: `${s.current}`, unit: s.current === 1 ? 'day' : 'days', l: 'CURRENT STREAK' },
     { v: `${s.longest}`, unit: s.longest === 1 ? 'day' : 'days', l: 'LONGEST STREAK' },
     { v: `${s.best.contributionCount}`, unit: s.best.date ? `on ${fmt(s.best.date, { month: 'short', day: 'numeric' })}` : '', l: 'BUSIEST DAY' },
   ].map((f, i) => {
-    const x = PAD + 430 + i * 160;
+    const x = sideX + i * sideGap;
     return `${label(x, 118, f.l, { size: 11.5, ls: 0.9 })}${text(x, 160, f.v, { font: 'display', size: 40 })}${text(x + measure(f.v, 'display', 40) + 8, 160, f.unit, { size: 15, fill: C.muted })}`;
   }).join('');
 
@@ -372,15 +393,15 @@ function activity(s) {
 
   const updated = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).toUpperCase();
   const body = `
-${label(PAD, 62, 'LAST 12 MONTHS ON GITHUB', { fill: C.accent })}
+${label(PAD, 62, 'ON GITHUB', { fill: C.accent })}
 ${label(W - PAD, 62, `LIVE DATA / UPDATED ${updated}`, { anchor: 'end', fill: C.faint })}
-${text(PAD - 4, 166, s.total, { font: 'display', size: 104, cls: 'rise' })}
-${text(PAD + totalW + 12, 142, 'contributions', { size: 17, fill: C.soft })}
-${text(PAD + totalW + 12, 164, `across ${s.active} active days`, { size: 15, fill: C.muted })}
+${text(PAD - 4, 166, s.allTime, { font: 'display', size: 104, cls: 'rise' })}
+${text(PAD + totalW + 12, 142, line1, { size: 17, fill: C.soft })}
+${text(PAD + totalW + 12, 164, `${s.total} in the last 12 months`, { size: 15, fill: C.muted })}
 ${side}
 ${months}${grid}
 ${bar}${legend}`;
-  return frame(W, H, body, { title: `${s.total} contributions in the last year. Current streak ${s.current} days, longest ${s.longest} days. Top languages: ${s.langs.map((l) => l.name).join(', ')}.` });
+  return frame(W, H, body, { title: `${s.allTime} contributions${s.since ? ` since ${s.since}` : ''}, ${s.total} in the last 12 months. Current streak ${s.current} days, longest ${s.longest} days. Top languages: ${s.langs.map((l) => l.name).join(', ')}.` });
 }
 
 // ------------------------------------------------------------------ closing
