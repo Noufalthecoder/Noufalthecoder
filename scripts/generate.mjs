@@ -60,10 +60,29 @@ const PROFILE = {
 };
 
 // ------------------------------------------------------------------ design tokens
-const C = {
-  bg: '#0C0B0A', raised: '#141210', line: '#2B2723', text: '#F3EEE6', soft: '#CFC7BA',
-  muted: '#948C80', faint: '#5E584F', accent: '#FF6B2C', accentSoft: '#FFB38A',
-  heat: ['#1B1816', '#55260F', '#993F17', '#DB5A22', '#FF8A4F'],
+const PAPER = {
+  bg: '#F4F4EF', raised: '#FFFFFF', line: '#DAD9D0', text: '#101114', soft: '#33353B',
+  muted: '#666972', faint: '#9B9DA3', accent: '#2233F5', accentSoft: '#8C97FF',
+  heat: ['#E5E5DE', '#BCC2FB', '#8591F8', '#4F5FF6', '#1B29D6'],
+};
+const BLUE = {
+  ...PAPER, bg: '#2233F5', raised: '#1B29D6', line: '#5563F8', text: '#FFFFFF', soft: '#E6E8FF',
+  muted: '#C6CBFF', faint: '#A3ABFB', accent: '#0B0C10', accentSoft: '#B9C0FF',
+};
+let C = PAPER;
+/** Draw a panel with the blue palette, then switch back. */
+const onBlue = (fn) => (...args) => { C = BLUE; try { return fn(...args); } finally { C = PAPER; } };
+
+// Brand colours for the logos in assets/logos.json
+const BRAND = {
+  python: '#3776AB', typescript: '#3178C6', javascript: '#E8C500', openjdk: '#E76F00',
+  langgraph: '#1C3C3C', langchain: '#1C3C3C', modelcontextprotocol: '#101114', ollama: '#101114',
+  pytorch: '#EE4C2C', tensorflow: '#FF6F00', scikitlearn: '#F7931E', opencv: '#5C3EE8', onnx: '#005CED',
+  numpy: '#4D77CF', pandas: '#150458', react: '#149ECA', nextdotjs: '#101114', nodedotjs: '#5FA04E',
+  express: '#101114', fastapi: '#009688', graphql: '#E10098', postgresql: '#4169E1', mongodb: '#47A248',
+  redis: '#FF4438', firebase: '#DD2C00', amazonwebservices: '#FF9900', googlecloud: '#4285F4',
+  docker: '#2496ED', apachekafka: '#231F20', githubactions: '#2088FF', linux: '#101114', git: '#F05032',
+  mlflow: '#0194E2', prometheus: '#E6522C', grafana: '#F46800', opentelemetry: '#425CC7', postman: '#FF6C37',
 };
 const FONTS = JSON.parse(readFileSync(asset('fonts.json'), 'utf8'));
 const PORTRAIT = JSON.parse(readFileSync(asset('portrait.json'), 'utf8'));
@@ -188,7 +207,7 @@ function hero(s) {
   const body = `
 <rect x="${W - 520}" width="520" height="${H}" fill="url(#glow)"/>
 <g transform="translate(${n(px)} ${n(py)}) scale(${n(scale)})" mask="url(#pfade)" fill="none" stroke="url(#ink)" stroke-linecap="round">${dots}</g>
-<rect class="scan" x="${n(px)}" y="0" width="${n(pw * scale)}" height="2" fill="${C.accent}"/>
+<rect class="scan" x="${n(px)}" y="0" width="${n(pw * scale)}" height="2" fill="${C.text}"/>
 <circle cx="${PAD + 5}" cy="73" r="5" fill="${C.accent}" class="pulse"/>
 ${label(PAD + 22, 78, PROFILE.role, { size: 14, fill: C.soft, cls: 'fade', style: 'animation-delay:.15s' })}
 <g clip-path="url(#l1)"><g class="up" style="animation-delay:.2s">${text(PAD - 4, y1, PROFILE.first, { font: 'display', size })}</g></g>
@@ -223,9 +242,9 @@ function button(str, primary) {
   const H = 56, size = 15, ls = 1.4;
   const tw = measure(str, 'mono', size, ls);
   const W = Math.ceil(tw + 28 * 2 + 26);
-  const fg = primary ? C.bg : C.text;
+  const fg = primary ? '#FFFFFF' : C.text;
   const body = `${text(28, 34.5, str, { font: 'mono', size, fill: fg, ls })}${arrow(28 + tw + 12, 22, 11, fg, 1.8)}`;
-  return frame(W, H, body, { fonts: ['mono'], radius: 28, bg: primary ? C.accent : C.bg, border: primary ? C.accent : '#3A3530', title: str });
+  return frame(W, H, body, { fonts: ['mono'], radius: 28, bg: primary ? C.accent : C.bg, border: primary ? C.accent : C.faint, title: str });
 }
 
 // ------------------------------------------------------------------ work cards
@@ -250,9 +269,9 @@ function heading(kicker, title) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${esc(title)}">
 <title>${esc(title)}</title>
 <style>${fontFace('display')}${fontFace('mono')}
-.d{font-family:${STACK.display};font-weight:800;fill:#14110F}
-.m{font-family:${STACK.mono};fill:#C2410C}
-@media (prefers-color-scheme:dark){.d{fill:${C.text}}.m{fill:${C.accent}}}
+.d{font-family:${STACK.display};font-weight:800;fill:#101114}
+.m{font-family:${STACK.mono};fill:#2233F5}
+@media (prefers-color-scheme:dark){.d{fill:#F4F4EF}.m{fill:#8C97FF}}
 </style>
 <text class="m" x="3" y="32" font-size="13" letter-spacing="1.1">${esc(kicker)}</text>
 <text class="d" x="1" y="78" font-size="42">${esc(title)}</text>
@@ -286,7 +305,7 @@ function stack() {
       const w = 13 + 18 + 9 + measure(name, 'text', SIZE) + 15;
       if (x + w > MAXX) { x = X0; rowY += CH + GAP; }
       chips += `<rect x="${n(x) + 0.5}" y="${rowY + 0.5}" width="${n(w)}" height="${CH}" rx="10" fill="${C.raised}" stroke="${C.line}"/>` +
-        `<path d="${LOGOS[slug]}" transform="translate(${n(x + 13.5)} ${rowY + 10.5}) scale(.75)" fill="${C.text}"/>` +
+        `<path d="${LOGOS[slug]}" transform="translate(${n(x + 13.5)} ${rowY + 10.5}) scale(.75)" fill="${BRAND[slug] || C.text}"/>` +
         text(x + 40.5, rowY + 24.5, name, { size: SIZE });
       x += w + GAP;
     }
@@ -334,7 +353,7 @@ function activity(s) {
   }).join('');
 
   const BY = GY + 7 * pitch + 32;
-  const shades = [C.accent, C.text, '#8E867A', '#5A544C', '#38332E'];
+  const shades = [C.accent, C.text, '#7F828A', '#ABADB2', '#CFCFCB'];
   let bx = PAD, lx = PAD;
   const bar = s.langs.map((l, i) => {
     const w = (l.pct / 100) * INNER;
@@ -382,7 +401,7 @@ ${label(W - PAD, H - 44, 'MESSAGE ME ON LINKEDIN', { anchor: 'end', fill: C.soft
 const stats = computeStats(await fetchData());
 mkdirSync(OUT, { recursive: true });
 const files = {
-  'hero.svg': hero(stats),
+  'hero.svg': onBlue(hero)(stats),
   'btn-linkedin.svg': button('LINKEDIN', false),
   'btn-portfolio.svg': button('PORTFOLIO', true),
   'h-work.svg': heading('01 / SELECTED WORK', 'Things I’ve shipped'),
@@ -392,7 +411,7 @@ const files = {
   'numbers.svg': numbers(),
   'stack.svg': stack(),
   'activity.svg': activity(stats),
-  'closing.svg': closing(),
+  'closing.svg': onBlue(closing)(),
 };
 PROFILE.work.forEach((p, i) => { files[`work-${p.id}.svg`] = workCard(p, i); });
 for (const [name, svg] of Object.entries(files)) writeFileSync(join(OUT, name), svg);
