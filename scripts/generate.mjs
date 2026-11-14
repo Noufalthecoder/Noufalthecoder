@@ -21,7 +21,7 @@ const PROFILE = {
   role: 'AI ENGINEER / FULL-STACK DEVELOPER',
   pitch: ['I build AI agents and full-stack products,', 'and ship them fast enough to win hackathons.'],
   facts: [
-    { n: '2×', label: 'HACKATHON WINS' },
+    { n: '10+', label: 'HACKATHON WINS' },
     { n: '4', label: 'INTERNSHIPS' },
     { n: '600+', label: 'LEETCODE' },
     { n: '{repos}', label: 'REPOS' },
@@ -40,6 +40,7 @@ const PROFILE = {
     { id: 'dana', name: 'DaNA', tag: 'REACT / HEALTH',
       lines: ['Premarital genetic screening explained simply,', 'so couples can plan for healthy children.'] },
   ],
+  recordNote: '10+ WINS, NATIONAL AND INTERNATIONAL',
   record: [
     { place: '1st', event: 'Agent.AI Challenge', by: 'HACKEREARTH', result: 'WINNER', top: true },
     { place: '1st', event: 'OpsFusion', by: 'IFMR KREA UNIVERSITY', result: 'WINNER', top: true },
@@ -286,14 +287,14 @@ ${label(W - PAD, y + 50, r.by, { anchor: 'end', size: 11.5, fill: C.faint })}</g
     return `${text(x, base + 74, v.n, { font: 'display', size: 46 })}${label(x, base + 99, v.label, { size: 12 })}`;
   }).join('');
   const body = `
-${label(PAD, 62, 'HACKATHON RECORD', { fill: C.accent })}
-${label(W - PAD, 62, `${PROFILE.record.length} PODIUMS AND FINALS`, { anchor: 'end', fill: C.faint })}
+${label(PAD, 62, 'HACKATHONS / SELECTED RESULTS', { fill: C.accent })}
+${label(W - PAD, 62, PROFILE.recordNote, { anchor: 'end', fill: C.soft })}
 ${rows}
 <rect y="${base}" width="${W}" height="140" fill="${C.raised}"/>
 ${rule(0, base, W)}
 ${label(PAD, base + 62, 'PROBLEMS', { fill: C.soft })}${label(PAD, base + 82, 'SOLVED', { fill: C.soft })}
 ${solved}`;
-  return frame(W, base + 140, body, { title: 'Hackathon record: ' + PROFILE.record.map((r) => `${r.result} at ${r.event}`).join('; ') });
+  return frame(W, base + 140, body, { title: `Hackathons: ${PROFILE.recordNote.toLowerCase()}. Selected results: ` + PROFILE.record.map((r) => `${r.result} at ${r.event}`).join('; ') });
 }
 
 // ------------------------------------------------------------------ live activity

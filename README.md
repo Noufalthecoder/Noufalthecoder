@@ -27,7 +27,7 @@
 
 <img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/h-record.svg" width="100%" alt="Track record: tested under a deadline" />
 
-<p><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/record.svg" width="100%" alt="Hackathon record: winner of the Agent.AI Challenge (HackerEarth) and OpsFusion (IFMR Krea University), runner-up at Synapse Sentinel Hackathon (CIT), national finalist at World Computer Hacker League, national semi-finalist at ET AI Hackathon 2026. 600+ LeetCode, 300+ CodeChef and 150+ SkillRack problems solved." /></p>
+<p><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/record.svg" width="100%" alt="Hackathons: 10+ wins, national and international. Selected results: winner of the Agent.AI Challenge (HackerEarth) and OpsFusion (IFMR Krea University), runner-up at Synapse Sentinel Hackathon (CIT), national finalist at World Computer Hacker League, national semi-finalist at ET AI Hackathon 2026. 600+ LeetCode, 300+ CodeChef and 150+ SkillRack problems solved." /></p>
 <p><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/about.svg" width="100%" alt="Experience: Backend AI Engineer Intern at Flyrank.ai (2025), SDE Intern at L2M Labs (2024), Machine Learning Intern at Alfido Tech (2024), Web Developer Intern at Elevate Labs (2024). Toolbox: Python, TypeScript, JavaScript, Java, SQL, LLM agents, RAG, TensorFlow, scikit-learn, OpenCV, React, Next.js, Node.js, FastAPI, GraphQL, AWS, Google Cloud, Firebase, PostgreSQL, Docker." /></p>
 
 <br />
