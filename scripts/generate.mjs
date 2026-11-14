@@ -23,7 +23,7 @@ const PROFILE = {
   facts: [
     { n: '10+', label: 'HACKATHON WINS' },
     { n: '4', label: 'INTERNSHIPS' },
-    { n: '600+', label: 'LEETCODE' },
+    { n: '700+', label: 'LEETCODE' },
     { n: '{repos}', label: 'REPOS' },
   ],
   work: [
@@ -40,30 +40,21 @@ const PROFILE = {
     { id: 'dana', name: 'DaNA', tag: 'REACT / HEALTH',
       lines: ['Premarital genetic screening explained simply,', 'so couples can plan for healthy children.'] },
   ],
-  recordNote: '10+ WINS, NATIONAL AND INTERNATIONAL',
-  record: [
-    { place: '1st', event: 'Agent.AI Challenge', by: 'HACKEREARTH', result: 'WINNER', top: true },
-    { place: '1st', event: 'OpsFusion', by: 'IFMR KREA UNIVERSITY', result: 'WINNER', top: true },
-    { place: '2nd', event: 'Synapse Sentinel Hackathon', by: 'CIT', result: 'RUNNER-UP' },
-    { place: 'Final', event: 'World Computer Hacker League', by: 'ICP HUBS', result: 'NATIONAL FINALIST' },
-    { place: 'Semi', event: 'ET AI Hackathon 2026', by: 'ECONOMIC TIMES', result: 'NATIONAL SEMI-FINALIST' },
+  numbers: [
+    { n: '10+', label: 'HACKATHON WINS', note: 'national & international' },
+    { n: '700+', label: 'LEETCODE SOLVED', note: 'Knight badge' },
+    { n: '1850+', label: 'CONTEST RATING', note: 'top 10% globally' },
+    { n: '200+', label: 'CODECHEF SOLVED' },
+    { n: '150+', label: 'SKILLRACK SOLVED' },
   ],
-  solved: [
-    { n: '600+', label: 'LEETCODE' },
-    { n: '300+', label: 'CODECHEF' },
-    { n: '150+', label: 'SKILLRACK' },
-  ],
-  experience: [
-    { year: '2025', role: 'Backend AI Engineer Intern', at: 'FLYRANK.AI' },
-    { year: '2024', role: 'SDE Intern', at: 'L2M LABS' },
-    { year: '2024', role: 'Machine Learning Intern', at: 'ALFIDO TECH' },
-    { year: '2024', role: 'Web Developer Intern', at: 'ELEVATE LABS' },
-  ],
-  toolbox: [
-    { label: 'LANGUAGES', items: 'Python, TypeScript, JavaScript, Java, SQL' },
-    { label: 'AI / ML', items: 'LLM agents, RAG, TensorFlow, scikit-learn, OpenCV' },
-    { label: 'WEB', items: 'React, Next.js, Node.js, FastAPI, GraphQL' },
-    { label: 'CLOUD / DATA', items: 'AWS, Google Cloud, Firebase, PostgreSQL, Docker' },
+  // [display name, logo slug in assets/logos.json]
+  stack: [
+    { label: 'LANGUAGES', items: [['Python', 'python'], ['TypeScript', 'typescript'], ['JavaScript', 'javascript'], ['Java', 'openjdk']] },
+    { label: 'AGENTIC AI / LLMS', items: [['LangGraph', 'langgraph'], ['LangChain', 'langchain'], ['MCP', 'modelcontextprotocol'], ['Ollama', 'ollama']] },
+    { label: 'AI / ML', items: [['PyTorch', 'pytorch'], ['TensorFlow', 'tensorflow'], ['scikit-learn', 'scikitlearn'], ['OpenCV', 'opencv'], ['ONNX Runtime', 'onnx'], ['NumPy', 'numpy'], ['Pandas', 'pandas']] },
+    { label: 'FULL-STACK', items: [['React', 'react'], ['Next.js', 'nextdotjs'], ['Node.js', 'nodedotjs'], ['Express', 'express'], ['FastAPI', 'fastapi'], ['GraphQL', 'graphql'], ['PostgreSQL', 'postgresql'], ['MongoDB', 'mongodb'], ['Redis', 'redis'], ['Firebase', 'firebase']] },
+    { label: 'CLOUD / DEVOPS', items: [['AWS', 'amazonwebservices'], ['Google Cloud', 'googlecloud'], ['Docker', 'docker'], ['Kafka', 'apachekafka'], ['GitHub Actions', 'githubactions'], ['Linux', 'linux'], ['Git', 'git']] },
+    { label: 'MLOPS / OBSERVABILITY', items: [['MLflow', 'mlflow'], ['Prometheus', 'prometheus'], ['Grafana', 'grafana'], ['OpenTelemetry', 'opentelemetry'], ['Postman', 'postman']] },
   ],
   closing: ['Building something with AI?', 'Let’s talk.'],
 };
@@ -76,6 +67,7 @@ const C = {
 };
 const FONTS = JSON.parse(readFileSync(asset('fonts.json'), 'utf8'));
 const PORTRAIT = JSON.parse(readFileSync(asset('portrait.json'), 'utf8'));
+const LOGOS = JSON.parse(readFileSync(asset('logos.json'), 'utf8'));
 const STACK = {
   display: `'Ndisplay','Arial Narrow','Helvetica Neue',Arial,sans-serif`,
   text: `'Ntext','Segoe UI','Helvetica Neue',Arial,sans-serif`,
@@ -268,33 +260,40 @@ function heading(kicker, title) {
 `;
 }
 
-// ------------------------------------------------------------------ hackathon record
-function record() {
-  const W = 1000, PAD = 56, ROW = 66, TOP = 104;
-  const rows = PROFILE.record.map((r, i) => {
-    const y = TOP + i * ROW;
-    return `<g class="rise" style="animation-delay:${n(0.15 + i * 0.08)}s">
-${rule(PAD, y, W - PAD)}
-${text(PAD, y + 45, r.place, { font: 'display', size: 38, fill: r.top ? C.accent : C.muted })}
-${text(PAD + 112, y + 41, r.event, { size: 22.5 })}
-${label(W - PAD, y + 31, r.result, { anchor: 'end', fill: r.top ? C.accent : C.soft, size: 12.5 })}
-${label(W - PAD, y + 50, r.by, { anchor: 'end', size: 11.5, fill: C.faint })}</g>`;
+// ------------------------------------------------------------------ numbers
+function numbers() {
+  const W = 1000, H = 216, PAD = 56, col = (W - PAD * 2) / PROFILE.numbers.length;
+  const cells = PROFILE.numbers.map((v, i) => {
+    const x = PAD + i * col;
+    return `<g class="rise" style="animation-delay:${n(0.1 + i * 0.08)}s">${i ? `<line x1="${n(x - 18)}" y1="94" x2="${n(x - 18)}" y2="178" stroke="${C.line}"/>` : ''}
+${text(x, 134, v.n, { font: 'display', size: 48, fill: i === 0 ? C.accent : C.text })}
+${label(x, 159, v.label, { size: 11.5, ls: 0.9, fill: C.soft })}
+${v.note ? text(x, 179, v.note, { size: 13, fill: C.muted }) : ''}</g>`;
   }).join('');
-  const base = TOP + PROFILE.record.length * ROW;
-  const colW = (W - PAD * 2) / 4;
-  const solved = PROFILE.solved.map((v, i) => {
-    const x = PAD + colW * (i + 1);
-    return `${text(x, base + 74, v.n, { font: 'display', size: 46 })}${label(x, base + 99, v.label, { size: 12 })}`;
-  }).join('');
-  const body = `
-${label(PAD, 62, 'HACKATHONS / SELECTED RESULTS', { fill: C.accent })}
-${label(W - PAD, 62, PROFILE.recordNote, { anchor: 'end', fill: C.soft })}
-${rows}
-<rect y="${base}" width="${W}" height="140" fill="${C.raised}"/>
-${rule(0, base, W)}
-${label(PAD, base + 62, 'PROBLEMS', { fill: C.soft })}${label(PAD, base + 82, 'SOLVED', { fill: C.soft })}
-${solved}`;
-  return frame(W, base + 140, body, { title: `Hackathons: ${PROFILE.recordNote.toLowerCase()}. Selected results: ` + PROFILE.record.map((r) => `${r.result} at ${r.event}`).join('; ') });
+  const body = `${label(PAD, 62, 'BY THE NUMBERS', { fill: C.accent })}${cells}`;
+  return frame(W, H, body, { title: PROFILE.numbers.map((v) => `${v.n} ${v.label.toLowerCase()}${v.note ? ` (${v.note})` : ''}`).join(', ') });
+}
+
+// ------------------------------------------------------------------ stack
+function stack() {
+  const W = 1000, PAD = 56, X0 = PAD + 214, MAXX = W - PAD, CH = 38, GAP = 8, SIZE = 15;
+  let y = 44, out = '';
+  PROFILE.stack.forEach((g, gi) => {
+    if (gi) { out += rule(PAD, y, W - PAD); y += 24; }
+    let x = X0, rowY = y, chips = '';
+    for (const [name, slug] of g.items) {
+      if (!LOGOS[slug]) throw new Error(`No logo for ${slug}`);
+      const w = 13 + 18 + 9 + measure(name, 'text', SIZE) + 15;
+      if (x + w > MAXX) { x = X0; rowY += CH + GAP; }
+      chips += `<rect x="${n(x) + 0.5}" y="${rowY + 0.5}" width="${n(w)}" height="${CH}" rx="10" fill="${C.raised}" stroke="${C.line}"/>` +
+        `<path d="${LOGOS[slug]}" transform="translate(${n(x + 13.5)} ${rowY + 10.5}) scale(.75)" fill="${C.text}"/>` +
+        text(x + 40.5, rowY + 24.5, name, { size: SIZE });
+      x += w + GAP;
+    }
+    out += `<g class="rise" style="animation-delay:${n(0.1 + gi * 0.09)}s">${label(PAD, y + 24, g.label, { fill: C.accent, size: 12, ls: 1 })}${chips}</g>`;
+    y = rowY + CH + 24;
+  });
+  return frame(W, y + 20, out, { fonts: ['text', 'mono'], title: 'Stack: ' + PROFILE.stack.map((g) => g.items.map((i) => i[0]).join(', ')).join(', ') });
 }
 
 // ------------------------------------------------------------------ live activity
@@ -365,25 +364,6 @@ ${bar}${legend}`;
   return frame(W, H, body, { title: `${s.total} contributions in the last year. Current streak ${s.current} days, longest ${s.longest} days. Top languages: ${s.langs.map((l) => l.name).join(', ')}.` });
 }
 
-// ------------------------------------------------------------------ experience + toolbox
-function about() {
-  const W = 1000, H = 392, PAD = 56, MID = 520;
-  const exp = PROFILE.experience.map((e, i) => {
-    const y = 104 + i * 66;
-    return `${rule(PAD, y, MID - 48)}${label(PAD, y + 31, e.year, { fill: C.accent, size: 12.5 })}
-${text(PAD + 66, y + 32, e.role, { size: 19.5 })}${label(PAD + 66, y + 52, e.at, { size: 11.5, fill: C.muted })}`;
-  }).join('');
-  const tools = PROFILE.toolbox.map((t, i) => {
-    const y = 104 + i * 66;
-    return `${rule(MID, y, W - PAD)}${label(MID, y + 31, t.label, { size: 11.5 })}${text(MID, y + 53, t.items, { size: 16.5, fill: C.soft })}`;
-  }).join('');
-  const body = `
-${label(PAD, 62, 'EXPERIENCE', { fill: C.accent })}
-${label(MID, 62, 'TOOLBOX', { fill: C.accent })}
-${exp}${tools}`;
-  return frame(W, H, body, { fonts: ['text', 'mono'], title: 'Experience: ' + PROFILE.experience.map((e) => `${e.role} at ${e.at} (${e.year})`).join('; ') + '. Toolbox: ' + PROFILE.toolbox.map((t) => t.items).join(', ') });
-}
-
 // ------------------------------------------------------------------ closing
 function closing() {
   const W = 1000, H = 250, PAD = 56;
@@ -407,10 +387,11 @@ const files = {
   'btn-portfolio.svg': button('PORTFOLIO', true),
   'h-work.svg': heading('01 / SELECTED WORK', 'Things I’ve shipped'),
   'h-record.svg': heading('02 / TRACK RECORD', 'Tested under a deadline'),
-  'h-activity.svg': heading('03 / ACTIVITY', 'Still shipping'),
-  'record.svg': record(),
+  'h-stack.svg': heading('03 / STACK', 'What I build with'),
+  'h-activity.svg': heading('04 / ACTIVITY', 'Still shipping'),
+  'numbers.svg': numbers(),
+  'stack.svg': stack(),
   'activity.svg': activity(stats),
-  'about.svg': about(),
   'closing.svg': closing(),
 };
 PROFILE.work.forEach((p, i) => { files[`work-${p.id}.svg`] = workCard(p, i); });

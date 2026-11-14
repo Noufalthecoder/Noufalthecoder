@@ -27,8 +27,13 @@
 
 <img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/h-record.svg" width="100%" alt="Track record: tested under a deadline" />
 
-<p><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/record.svg" width="100%" alt="Hackathons: 10+ wins, national and international. Selected results: winner of the Agent.AI Challenge (HackerEarth) and OpsFusion (IFMR Krea University), runner-up at Synapse Sentinel Hackathon (CIT), national finalist at World Computer Hacker League, national semi-finalist at ET AI Hackathon 2026. 600+ LeetCode, 300+ CodeChef and 150+ SkillRack problems solved." /></p>
-<p><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/about.svg" width="100%" alt="Experience: Backend AI Engineer Intern at Flyrank.ai (2025), SDE Intern at L2M Labs (2024), Machine Learning Intern at Alfido Tech (2024), Web Developer Intern at Elevate Labs (2024). Toolbox: Python, TypeScript, JavaScript, Java, SQL, LLM agents, RAG, TensorFlow, scikit-learn, OpenCV, React, Next.js, Node.js, FastAPI, GraphQL, AWS, Google Cloud, Firebase, PostgreSQL, Docker." /></p>
+<p><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/numbers.svg" width="100%" alt="By the numbers: 10+ hackathon wins, national and international. 700+ LeetCode problems solved (Knight badge), 1850+ contest rating (top 10% globally), 200+ CodeChef and 150+ SkillRack problems solved." /></p>
+
+<br />
+
+<img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/h-stack.svg" width="100%" alt="Stack: what I build with" />
+
+<p><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/stack.svg" width="100%" alt="Languages: Python, TypeScript, JavaScript, Java. Agentic AI and LLMs: LangGraph, LangChain, MCP, Ollama. AI and ML: PyTorch, TensorFlow, scikit-learn, OpenCV, ONNX Runtime, NumPy, Pandas. Full-stack: React, Next.js, Node.js, Express, FastAPI, GraphQL, PostgreSQL, MongoDB, Redis, Firebase. Cloud and DevOps: AWS, Google Cloud, Docker, Kafka, GitHub Actions, Linux, Git. MLOps and observability: MLflow, Prometheus, Grafana, OpenTelemetry, Postman." /></p>
 
 <br />
 
