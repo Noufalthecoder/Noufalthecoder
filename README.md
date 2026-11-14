@@ -16,7 +16,7 @@
 </p>
 <p align="center">
   <a href="https://github.com/Noufalthecoder/recongraph"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/work-recongraph.svg" width="49.2%" alt="ReconGraph. Financial reconciliation intelligence." /></a>
-  <a href="https://github.com/Noufalthecoder/NaviCargo-AI"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/work-navicargo.svg" width="49.2%" alt="NaviCargo AI. Predicts missed vessel connections for exporters." /></a>
+  <a href="https://github.com/Noufalthecoder/pivaani"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/work-pivaani.svg" width="49.2%" alt="Pi Vaani. A trust layer for UPI: when a payment hangs, the soundbox speaks up so nobody pays twice." /></a>
 </p>
 <p align="center">
   <a href="https://github.com/Noufalthecoder/catalyst"><img src="https://raw.githubusercontent.com/Noufalthecoder/Noufalthecoder/output/work-catalyst.svg" width="49.2%" alt="Catalyst. Turns messy industrial catalog data into validated product information." /></a>
